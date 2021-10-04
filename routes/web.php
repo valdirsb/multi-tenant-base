@@ -25,5 +25,7 @@ Route::domain("{{$tenantParam}}.$domain")
 
         Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
+        Route::get('/painel', [App\Http\Controllers\HomeController::class, 'painel']);
+
 
     });

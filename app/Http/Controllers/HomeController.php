@@ -12,9 +12,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $produtos = Produto::all();
-        return view('home', [
-            'produtos' => $produtos
-        ] );
+        return view('home');
+    }
+
+    public function painel()
+    {
+        return view('painel');
     }
 }
