@@ -9,7 +9,6 @@
 
 ## Instalação
 
-#Instalação
 - clone o repositório
 ```bash
 git clone https://github.com/valdirsb/multi-tenant-base
