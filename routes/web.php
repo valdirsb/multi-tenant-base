@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+$appUrl = config('app.url');
+$domain = parse_url($appUrl)['host'];
+$tenantParam = config('tenant.route_param');
+
+Route::domain("{{$tenantParam}}.$domain")
+//    ->middleware('tenant')
+    ->middleware('seturl')
+    ->group(function () {
+
+
+        Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+
+
+    });
